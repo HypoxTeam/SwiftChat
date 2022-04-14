@@ -4,7 +4,7 @@ import team.hypox.chat.member.ChannelMember;
 import team.hypox.chat.message.MessageContext;
 import team.hypox.chat.util.ChannelMemberList;
 
-public abstract class AbstractChannel implements Channel {
+public abstract class AbstractChannel implements Channel, ChannelCondition {
 
 	@Override
 	public void notifyMessage(MessageContext ctx) {
@@ -17,8 +17,9 @@ public abstract class AbstractChannel implements Channel {
 		}
 	}
 
-	protected abstract ChannelMemberList audience();
+	@Override
+	public abstract boolean canListen(ChannelMember member, MessageContext ctx);
 
-	protected abstract boolean canListen(ChannelMember member, MessageContext ctx);
+	protected abstract ChannelMemberList audience();
 
 }
