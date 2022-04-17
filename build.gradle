@@ -3,7 +3,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version("7.0.0")
 }
 
-group("team.hypox.chat")
+group("chat")
 version("1.0.0")
 
 allprojects {
