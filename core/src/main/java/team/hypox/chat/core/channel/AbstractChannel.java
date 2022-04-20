@@ -4,7 +4,7 @@ import team.hypox.chat.core.member.ChannelMember;
 import team.hypox.chat.core.message.MessageContext;
 import team.hypox.chat.core.util.ChannelMemberList;
 
-public abstract class AbstractChannel implements Channel, ChannelCondition {
+public abstract class AbstractChannel implements Channel, ChannelCondition, ChannelFormatter {
 
 	@Override
 	public void notifyMessage(MessageContext ctx) {
@@ -12,9 +12,14 @@ public abstract class AbstractChannel implements Channel, ChannelCondition {
 
 		for (ChannelMember member : audience) {
 			if (canListen(member, ctx)) {
-				member.sendMessage(ctx);
+				member.sendMessage(formatMessage(ctx, member));
 			}
 		}
+	}
+
+	@Override
+	public MessageContext formatMessage(MessageContext ctx, ChannelMember recipient) {
+		return ctx;
 	}
 
 	@Override
