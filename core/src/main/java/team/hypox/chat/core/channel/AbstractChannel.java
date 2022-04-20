@@ -13,7 +13,7 @@ public abstract class AbstractChannel implements Channel, ChannelCondition, Chan
 
 		for (ChannelMember member : audience) {
 			if (canListen(member, formattedContext)) {
-				member.sendMessage(formatMessage(formattedContext, member));
+				member.sendMessage(formatMessage(formattedContext.clone(), member));
 			}
 		}
 	}

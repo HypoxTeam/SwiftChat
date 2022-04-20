@@ -12,4 +12,6 @@ public interface MessageContext {
 
 	String formattedMessage();
 
+	MessageContext clone();
+
 }
