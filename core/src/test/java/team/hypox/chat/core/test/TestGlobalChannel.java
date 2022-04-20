@@ -11,11 +11,6 @@ public class TestGlobalChannel extends AbstractChannel {
 	private final ChannelFormatter formatter = new MentionChannelFormatter(new RecipientChannelFormatter(new EndFormat()));
 
 	@Override
-	public boolean canListen(ChannelMember member, MessageContext ctx) {
-		return true;
-	}
-
-	@Override
 	public MessageContext formatMessage(MessageContext ctx) {
 		ctx.formatMessage(ctx.author().name() + " -> " + ctx.message());
 		return ctx;
