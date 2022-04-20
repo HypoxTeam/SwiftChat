@@ -6,9 +6,9 @@ import java.util.UUID;
 
 public interface ChannelMember {
 
-	UUID id();
+	String name();
 
-	ChannelMemberPreferences preferences();
+	UUID id();
 
 	void sendMessage(MessageContext message);
 

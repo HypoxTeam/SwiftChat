@@ -8,8 +8,8 @@ import team.hypox.chat.core.member.ChannelMember;
 import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor(staticName = "empty")
+@AllArgsConstructor(staticName = "from")
 public class ChannelMemberList implements List<ChannelMember> {
 
 	@Delegate

@@ -1,0 +1,19 @@
+default:
+  conditions:
+    - "IGNORE"
+    - "SPAM"
+    - "FLOOD"
+  formatters:
+    - "COLOR"
+    - "RANK"
+    - "BAD_WORDS_PERSONAL"
+
+staff-channel:
+  conditions:
+    - "SPAM"
+    - "FLOOD"
+  formatters:
+    - "COLOR"
+    - "RANK"
+    - "BAD_WORDS_GLOBAL"
+    - "DOT_FINAL"
