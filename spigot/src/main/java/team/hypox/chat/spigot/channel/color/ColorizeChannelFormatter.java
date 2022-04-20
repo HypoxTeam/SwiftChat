@@ -1,5 +1,6 @@
 package team.hypox.chat.spigot.channel.color;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import team.hypox.chat.core.channel.ChannelFormatter;
 import team.hypox.chat.core.channel.decorator.DecoratorChannelFormatter;
@@ -17,7 +18,10 @@ public class ColorizeChannelFormatter extends DecoratorChannelFormatter {
 	}
 
 	private MessageContext colorize(MessageContext ctx) {
-		ctx.formatMessage(ChatColor.translateAlternateColorCodes('&', ctx.formattedMessage()));
+		if (Bukkit.getPlayer(ctx.author().id()).hasPermission("swiftchat.colors")) {
+			ctx.formatMessage(ChatColor.translateAlternateColorCodes('&', ctx.formattedMessage()));
+		}
+
 		return ctx;
 	}
 }
