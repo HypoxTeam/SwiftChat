@@ -4,12 +4,12 @@ import team.hypox.chat.core.member.ChannelMember;
 
 public interface MessageContext {
 
-	MessageContent<?> content();
+	String message();
 
 	ChannelMember author();
 
-	interface MessageContent<T> {
-		T get();
-	}
+	void formatMessage(String newFormattedMessage);
+
+	String formattedMessage();
 
 }

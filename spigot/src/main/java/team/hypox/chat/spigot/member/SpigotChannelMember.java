@@ -1,13 +1,12 @@
 package team.hypox.chat.spigot.member;
 
 import lombok.Data;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import team.hypox.chat.core.member.ChannelMember;
 import team.hypox.chat.core.member.ChannelMemberPreferences;
 import team.hypox.chat.core.message.MessageContext;
-import team.hypox.chat.core.message.MessageContext.MessageContent;
+import team.hypox.chat.spigot.util.Text;
 
 import java.util.UUID;
 
@@ -29,9 +28,7 @@ public class SpigotChannelMember implements ChannelMember {
 
 	@Override
 	public void sendMessage(MessageContext message) {
-		MessageContent<TextComponent> content = (MessageContent<TextComponent>) message.content();
-
-		bukkit().spigot().sendMessage(content.get());
+		bukkit().spigot().sendMessage(Text.parse(message.formattedMessage()));
 	}
 
 	public Player bukkit() {
