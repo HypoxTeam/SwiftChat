@@ -18,6 +18,15 @@ public abstract class AbstractChannel implements Channel, ChannelCondition, Chan
 		}
 	}
 
+	/**
+	 * Provides a channel member list to notify the new message
+	 * @return a new audience
+	 */
+	protected abstract ChannelMemberList audience();
+
+	/*
+		Implemented by default, override this methods if is necessary in child classes
+	 */
 	@Override
 	public MessageContext formatMessage(MessageContext ctx, ChannelMember recipient) {
 		return ctx;
@@ -32,11 +41,5 @@ public abstract class AbstractChannel implements Channel, ChannelCondition, Chan
 	public boolean canListen(ChannelMember member, MessageContext ctx) {
 		return true;
 	}
-
-	/**
-	 * Provides a channel member list to notify the new message
-	 * @return a new audience
-	 */
-	protected abstract ChannelMemberList audience();
 
 }
