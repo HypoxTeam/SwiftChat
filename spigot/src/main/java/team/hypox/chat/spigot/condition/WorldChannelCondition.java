@@ -1,20 +1,19 @@
-package team.hypox.chat.spigot.channel.world;
+package team.hypox.chat.spigot.condition;
 
+import org.bukkit.World;
 import team.hypox.chat.core.channel.ChannelCondition;
 import team.hypox.chat.core.channel.decorator.DecoratorChannelCondition;
 import team.hypox.chat.core.member.ChannelMember;
 import team.hypox.chat.core.message.MessageContext;
-import team.hypox.chat.spigot.bukkit.WorldWrapper;
 import team.hypox.chat.spigot.member.SpigotChannelMember;
 
 public class WorldChannelCondition extends DecoratorChannelCondition {
 
-	private final WorldWrapper worldWrapper;
+	private final World world;
 
-	public WorldChannelCondition(WorldWrapper worldWrapper, ChannelCondition decorators) {
+	public WorldChannelCondition(World world, ChannelCondition decorators) {
 		super(decorators);
-
-		this.worldWrapper = worldWrapper;
+		this.world = world;
 	}
 
 	@Override
@@ -31,7 +30,7 @@ public class WorldChannelCondition extends DecoratorChannelCondition {
 
 		return playerMember.bukkit().getWorld().getName()
 				.equalsIgnoreCase(
-						worldWrapper.getName()
+						world.getName()
 				);
 	}
 

@@ -1,4 +1,4 @@
-package team.hypox.chat.spigot.channel.color;
+package team.hypox.chat.spigot.format;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
