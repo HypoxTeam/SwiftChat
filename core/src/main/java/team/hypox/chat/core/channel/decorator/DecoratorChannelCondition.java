@@ -11,7 +11,16 @@ public abstract class DecoratorChannelCondition implements ChannelCondition {
 	private final ChannelCondition condition;
 
 	@Override
-	public boolean canListen(ChannelMember member, MessageContext ctx) {
-		return condition.canListen(member, ctx);
+	public boolean canListen(ChannelMember recipient, MessageContext ctx) {
+		return condition.canListen(recipient, ctx);
 	}
+
+	public static class EndDecorator implements ChannelCondition {
+
+		@Override
+		public boolean canListen(ChannelMember recipient, MessageContext ctx) {
+			return true;
+		}
+	}
+
 }

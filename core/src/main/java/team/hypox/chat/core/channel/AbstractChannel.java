@@ -38,7 +38,7 @@ public abstract class AbstractChannel implements Channel, ChannelCondition, Chan
 	}
 
 	@Override
-	public boolean canListen(ChannelMember member, MessageContext ctx) {
+	public boolean canListen(ChannelMember recipient, MessageContext ctx) {
 		return true;
 	}
 

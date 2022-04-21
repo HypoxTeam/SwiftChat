@@ -19,4 +19,17 @@ public abstract class DecoratorChannelFormatter implements ChannelFormatter {
 	public MessageContext formatMessage(MessageContext ctx) {
 		return formatter.formatMessage(ctx);
 	}
+
+	public static class EndDecorator implements ChannelFormatter {
+
+		@Override
+		public MessageContext formatMessage(MessageContext ctx, ChannelMember recipient) {
+			return ctx;
+		}
+
+		@Override
+		public MessageContext formatMessage(MessageContext ctx) {
+			return ctx;
+		}
+	}
 }
