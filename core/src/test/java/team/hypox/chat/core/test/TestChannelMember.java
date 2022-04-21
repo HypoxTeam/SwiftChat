@@ -10,6 +10,8 @@ public class TestChannelMember implements ChannelMember {
 	private final UUID id = UUID.randomUUID();
 	private final String name;
 
+	private String lastMessage;
+
 	public TestChannelMember(String name) {
 		this.name = name;
 	}
@@ -26,7 +28,12 @@ public class TestChannelMember implements ChannelMember {
 
 	@Override
 	public void sendMessage(MessageContext message) {
-		System.out.println(message.formattedMessage());
+		this.lastMessage = message.formattedMessage();
+
+		System.out.println(lastMessage);
 	}
 
+	public String lastMessage() {
+		return lastMessage;
+	}
 }

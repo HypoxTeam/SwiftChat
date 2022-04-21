@@ -1,5 +1,6 @@
 package team.hypox.chat.core.test;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import team.hypox.chat.core.channel.Channel;
 import team.hypox.chat.core.member.ChannelMember;
@@ -10,17 +11,21 @@ public class ChannelTest {
 	public static final ChannelMemberList MEMBERS = ChannelMemberList.empty();
 
 	@Test
-	public void testChannel() throws Exception {
-		String message = "good morning @Diego !";
+	public void testChannel() {
+		String message = "good morning @Diego and @TestUser!";
 
 		Channel globalChannel = new TestGlobalChannel();
 		ChannelMember author = new TestChannelMember("TestUser");
+		ChannelMember user2 = new TestChannelMember("TestUser2");
+		TestChannelMember diego = new TestChannelMember("Diego");
 
 		MEMBERS.add(author);
-		MEMBERS.add(new TestChannelMember("Diego"));
-		MEMBERS.add(new TestChannelMember("TestUser2"));
+		MEMBERS.add(diego);
+		MEMBERS.add(user2);
 
 		globalChannel.notifyMessage(new TestMessageContext(author, message));
+
+		Assertions.assertEquals(diego.lastMessage(), "TestUser -> good morning -> MENTIONED YOU <- and @TestUser!| sent for: Diego");
 	}
 
 }
