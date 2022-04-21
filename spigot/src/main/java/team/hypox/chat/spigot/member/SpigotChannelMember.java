@@ -17,13 +17,13 @@ public class SpigotChannelMember implements ChannelMember {
 	private final ChannelMemberPreferences preferences;
 
 	@Override
-	public UUID id() {
-		return id;
+	public String name() {
+		return bukkit().getName();
 	}
 
 	@Override
-	public ChannelMemberPreferences preferences() {
-		return preferences;
+	public UUID id() {
+		return id;
 	}
 
 	@Override
