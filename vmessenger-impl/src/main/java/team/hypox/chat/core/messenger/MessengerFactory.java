@@ -21,7 +21,7 @@ public class MessengerFactory {
 	private final Map<Class<?>, ObjectSerialize> serializers = new HashMap<>();
 
 	public Messenger newRedisMessenger(String name, ObjectSerialize serialize) {
-		requireNonNull(name, "Messenger name cant be null"	);
+		requireNonNull(name, "Messenger name cant be null");
 		requireNonNull(serialize, "Object serializer not found in serializer map or is null");
 
 		return new RedisMessenger(name, pool, pool.getResource(), serialize, mapper);
