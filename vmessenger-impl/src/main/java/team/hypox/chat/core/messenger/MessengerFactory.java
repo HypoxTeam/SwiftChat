@@ -1,7 +1,7 @@
 package team.hypox.chat.core.messenger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.ibxnjadev.vmessenger.redis.RedisMessenger;
 import net.ibxnjadev.vmessenger.universal.Messenger;
 import net.ibxnjadev.vmessenger.universal.serialize.ObjectSerialize;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 import static java.util.Objects.requireNonNull;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MessengerFactory {
 
 	private final JedisPool pool;
