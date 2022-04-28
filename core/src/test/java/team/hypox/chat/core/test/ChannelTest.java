@@ -13,6 +13,7 @@ public class ChannelTest {
 	@Test
 	public void testChannel() {
 		String message = "good morning @Diego and @TestUser!";
+		String expected = "TestUser -> good morning -> MENTIONED YOU <- and @TestUser!| sent for: Diego";
 
 		Channel globalChannel = new TestGlobalChannel();
 		ChannelMember author = new TestChannelMember("TestUser");
@@ -25,7 +26,7 @@ public class ChannelTest {
 
 		globalChannel.notifyMessage(new TestMessageContext(author, message));
 
-		Assertions.assertEquals(diego.lastMessage(), "TestUser -> good morning -> MENTIONED YOU <- and @TestUser!| sent for: Diego");
+		Assertions.assertEquals(expected, diego.lastMessage());
 	}
 
 }

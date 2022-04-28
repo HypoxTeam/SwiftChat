@@ -1,0 +1,15 @@
+repositories {
+    maven { url("https://jitpack.io") }
+}
+
+dependencies {
+    //core
+    implementation(project(":core"))
+
+    //vmessenger
+    implementation("com.github.bxnjadev.VMessenger:universal:main-SNAPSHOT")
+    implementation("com.github.bxnjadev.VMessenger:redis:main-SNAPSHOT")
+
+    implementation("redis.clients:jedis:3.7.0")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.5")
+}
