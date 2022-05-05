@@ -3,7 +3,7 @@ package team.hypox.chat.core.util;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Delegate;
-import team.hypox.chat.core.member.ChannelMember;
+import team.hypox.chat.core.structure.member.ChannelMember;
 
 import java.util.ArrayList;
 import java.util.List;

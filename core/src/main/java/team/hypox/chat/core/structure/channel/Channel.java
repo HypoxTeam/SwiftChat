@@ -1,6 +1,6 @@
-package team.hypox.chat.core.channel;
+package team.hypox.chat.core.structure.channel;
 
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.message.MessageContext;
 
 public interface Channel {
 

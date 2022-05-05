@@ -1,6 +1,6 @@
 package team.hypox.chat.spigot.member;
 
-import team.hypox.chat.core.member.ChannelMember;
+import team.hypox.chat.core.structure.member.ChannelMember;
 
 public class MemberSettings {
 

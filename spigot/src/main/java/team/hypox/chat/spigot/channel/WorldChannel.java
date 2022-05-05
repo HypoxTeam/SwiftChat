@@ -1,11 +1,11 @@
 package team.hypox.chat.spigot.channel;
 
 import org.bukkit.World;
-import team.hypox.chat.core.channel.AbstractChannel;
-import team.hypox.chat.core.channel.ChannelCondition;
-import team.hypox.chat.core.channel.decorator.DecoratorChannelCondition;
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.channel.AbstractChannel;
+import team.hypox.chat.core.structure.channel.ChannelCondition;
+import team.hypox.chat.core.structure.channel.decorator.DecoratorChannelCondition;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.message.MessageContext;
 import team.hypox.chat.core.util.ChannelMemberList;
 import team.hypox.chat.spigot.bukkit.AudienceProvider;
 import team.hypox.chat.spigot.condition.WorldChannelCondition;

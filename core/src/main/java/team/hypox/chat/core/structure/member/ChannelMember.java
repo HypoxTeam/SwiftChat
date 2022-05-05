@@ -1,6 +1,6 @@
-package team.hypox.chat.core.member;
+package team.hypox.chat.core.structure.member;
 
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.message.MessageContext;
 
 import java.util.UUID;
 

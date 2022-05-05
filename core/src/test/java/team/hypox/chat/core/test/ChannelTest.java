@@ -2,8 +2,8 @@ package team.hypox.chat.core.test;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import team.hypox.chat.core.channel.Channel;
-import team.hypox.chat.core.member.ChannelMember;
+import team.hypox.chat.core.structure.channel.Channel;
+import team.hypox.chat.core.structure.member.ChannelMember;
 import team.hypox.chat.core.util.ChannelMemberList;
 
 public class ChannelTest {

@@ -1,10 +1,10 @@
 package team.hypox.chat.spigot.format;
 
 import org.bukkit.ChatColor;
-import team.hypox.chat.core.channel.ChannelFormatter;
-import team.hypox.chat.core.channel.decorator.DecoratorChannelFormatter;
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.channel.ChannelFormatter;
+import team.hypox.chat.core.structure.channel.decorator.DecoratorChannelFormatter;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.message.MessageContext;
 import team.hypox.chat.spigot.settings.mention.MentionSettings;
 
 import java.util.regex.Matcher;

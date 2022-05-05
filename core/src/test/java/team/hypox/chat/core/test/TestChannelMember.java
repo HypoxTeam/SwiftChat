@@ -1,7 +1,7 @@
 package team.hypox.chat.core.test;
 
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.message.MessageContext;
 
 import java.util.UUID;
 

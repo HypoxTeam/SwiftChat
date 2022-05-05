@@ -3,7 +3,7 @@ package team.hypox.chat.spigot.bukkit;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
-import team.hypox.chat.core.member.cache.MemberCache;
+import team.hypox.chat.core.structure.member.cache.MemberCache;
 import team.hypox.chat.core.util.ChannelMemberList;
 
 import java.util.stream.Collectors;

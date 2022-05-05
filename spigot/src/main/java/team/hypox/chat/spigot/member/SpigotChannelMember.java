@@ -3,9 +3,9 @@ package team.hypox.chat.spigot.member;
 import lombok.Data;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.member.ChannelMemberPreferences;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.member.ChannelMemberPreferences;
+import team.hypox.chat.core.structure.message.MessageContext;
 import team.hypox.chat.spigot.util.Text;
 
 import java.util.UUID;

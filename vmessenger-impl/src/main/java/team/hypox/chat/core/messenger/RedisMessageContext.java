@@ -1,8 +1,8 @@
 package team.hypox.chat.core.messenger;
 
 import lombok.RequiredArgsConstructor;
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.message.MessageContext;
 
 @RequiredArgsConstructor
 public class RedisMessageContext implements ProxyMessageContext {

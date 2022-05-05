@@ -1,9 +1,9 @@
 package team.hypox.chat.core.test;
 
-import team.hypox.chat.core.channel.ChannelFormatter;
-import team.hypox.chat.core.channel.decorator.DecoratorChannelFormatter;
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.channel.ChannelFormatter;
+import team.hypox.chat.core.structure.channel.decorator.DecoratorChannelFormatter;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.message.MessageContext;
 
 public class RecipientChannelFormatter extends DecoratorChannelFormatter {
 	public RecipientChannelFormatter(ChannelFormatter formatter) {

@@ -1,4 +1,4 @@
-package team.hypox.chat.core.member;
+package team.hypox.chat.core.structure.member;
 
 import lombok.Data;
 

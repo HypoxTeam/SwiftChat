@@ -1,6 +1,6 @@
-package team.hypox.chat.core.member.cache;
+package team.hypox.chat.core.structure.member.cache;
 
-import team.hypox.chat.core.member.ChannelMember;
+import team.hypox.chat.core.structure.member.ChannelMember;
 
 import java.util.UUID;
 

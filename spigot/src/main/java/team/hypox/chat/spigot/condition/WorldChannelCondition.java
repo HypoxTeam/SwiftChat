@@ -1,10 +1,10 @@
 package team.hypox.chat.spigot.condition;
 
 import org.bukkit.World;
-import team.hypox.chat.core.channel.ChannelCondition;
-import team.hypox.chat.core.channel.decorator.DecoratorChannelCondition;
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.channel.ChannelCondition;
+import team.hypox.chat.core.structure.channel.decorator.DecoratorChannelCondition;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.message.MessageContext;
 import team.hypox.chat.spigot.member.SpigotChannelMember;
 
 public class WorldChannelCondition extends DecoratorChannelCondition {

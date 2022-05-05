@@ -1,8 +1,8 @@
 package team.hypox.chat.spigot.message;
 
 import lombok.Data;
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.message.MessageContext;
 
 @Data
 public class SimpleMessageContext implements MessageContext {

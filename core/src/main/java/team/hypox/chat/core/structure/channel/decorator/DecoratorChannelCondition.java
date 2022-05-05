@@ -1,9 +1,9 @@
-package team.hypox.chat.core.channel.decorator;
+package team.hypox.chat.core.structure.channel.decorator;
 
 import lombok.Data;
-import team.hypox.chat.core.channel.ChannelCondition;
-import team.hypox.chat.core.member.ChannelMember;
-import team.hypox.chat.core.message.MessageContext;
+import team.hypox.chat.core.structure.channel.ChannelCondition;
+import team.hypox.chat.core.structure.member.ChannelMember;
+import team.hypox.chat.core.structure.message.MessageContext;
 
 @Data
 public abstract class DecoratorChannelCondition implements ChannelCondition {
