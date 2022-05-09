@@ -48,4 +48,4 @@ have access to your new modules
 
 Start contributing [here](https://github.com/HypoxTeam/SwiftChat/pulls)
 
-PS: if you want to contribute please follow the [code guide](https://github.com/HypoxTeam/SwiftChat/code-guide.md)!
+PS: if you want to contribute please follow the [code guide](https://github.com/HypoxTeam/SwiftChat/blob/main/code-guide.md)!
