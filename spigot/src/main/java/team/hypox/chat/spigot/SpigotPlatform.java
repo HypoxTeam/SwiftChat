@@ -9,7 +9,7 @@ import team.hypox.chat.spigot.platform.YamlConfigurationFactory;
 
 public class SpigotPlatform extends SwiftChatPlatform {
 
-	public final static String PLATFORM_NAME = "SwiftChat-Spigot";
+	public static String PLATFORM_NAME;
 	private final JavaPlugin plugin;
 
 	public SpigotPlatform(JavaPlugin plugin) {
@@ -18,6 +18,8 @@ public class SpigotPlatform extends SwiftChatPlatform {
 
 	@Override
 	protected void setup() {
+		PLATFORM_NAME = plugin.getName();
+
 		this.channelContainer = new ChannelCacheContainer();
 		this.decoratorNamespace = new HashDecoratorNamespace();
 		this.configurationFactory = new YamlConfigurationFactory(plugin);
