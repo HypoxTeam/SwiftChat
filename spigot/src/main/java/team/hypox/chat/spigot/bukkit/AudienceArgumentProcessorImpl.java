@@ -17,7 +17,7 @@ public class AudienceArgumentProcessorImpl implements AudienceArgumentProcessor 
 
 	@Override
 	public Object processArgument(String type, Object arg) {
-		return processors.get(type).apply(arg);
+		return processors.getOrDefault(type, Processors.ANYTHING).apply(arg);
 	}
 
 	@Override
