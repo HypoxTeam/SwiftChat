@@ -1,15 +1,21 @@
 package team.hypox.chat.core;
 
 import team.hypox.chat.core.channel.ChannelContainer;
+import team.hypox.chat.core.commons.Condition;
 import team.hypox.chat.core.configuration.ConfigurationFactory;
 import team.hypox.chat.core.extend.DecoratorNamespace;
 
 public abstract class SwiftChatPlatform {
 
+	private boolean enabled = false;
+
 	public void enable() {
+		Condition.expects(!enabled, "You cant enable SwiftChat while its enabled!");
+
 		try {
 			setup();
 		} finally {
+			enabled = true;
 			SwiftChatPlatformAccessor.grantAccess(this);
 		}
 	}
