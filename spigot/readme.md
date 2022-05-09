@@ -14,10 +14,10 @@ public class AddonExample implements Listener {
 		if (!SpigotPlatform.isSwiftChat(event.getPlugin())) {
 			return;
 		}
-		
-		//Access to swiftchat high-level platform
+
+		//Access to swift-chat high-level platform
 		SwiftChatPlatform platform = SwiftChatPlatformAccessor.access();
-		
+
 		//Using SwiftChat configuration factory to create config files inside SwiftChat
 		AutoModService modService = new AutoModService(platform.configurationFactory());
 
@@ -25,14 +25,26 @@ public class AddonExample implements Listener {
 		platform.decoratorNamespace()
 				.use(ToxicityCondition.class, ToxicityCondition.withoutDecorator(modService));
 
+		platform.audienceNamespace()
+				//Register audience provider namespace
+				.use("empty", unused -> ChannelMemberList::empty)
+				.argumentProcessor()
+				//Add argument processor for use when the provider is queried
+				.addProcessor("empty", unused -> unused);
+
 		//Creating a new blank channel
-		Channel awesomeChannel = new SampleChannel(
-				ChannelMemberList::empty,
-				platform.decoratorNamespace()
-						.usingFormatter(ColorizeChannelFormatter.class),
-				platform.decoratorNamespace()
-						.usingCondition(ToxicityCondition.class)
-		);
+
+		//Create the channel data (for serializing)
+		ChannelData channelData = ChannelData.with()
+				.name("my-awesome-vip-club")
+				.audienceType("empty")
+				.conditionals(Arrays.asList(ToxicityCondition.class))
+				.formatters(Arrays.asList(ColorizeChannelFormatter.class, GlobalCensureChannelFormatter.class))
+				.build();
+
+		//Create the channel using the channel data
+		Channel awesomeChannel = platform.channelFactory()
+				.from(channelData);
 
 		//Register the channel
 		platform.channelContainer()
@@ -40,6 +52,7 @@ public class AddonExample implements Listener {
 	}
 
 }
+
 ```
 
 ### Extending with the main core

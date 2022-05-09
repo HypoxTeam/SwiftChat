@@ -41,8 +41,9 @@ public class AudienceFactory implements AudienceNamespace {
 	}
 
 	@Override
-	public void use(String namespace, Function<Object, AudienceProvider> factory) {
+	public AudienceNamespace use(String namespace, Function<Object, AudienceProvider> factory) {
 		namespaces.put(namespace, factory);
+		return this;
 	}
 
 	public AudienceProvider server() {

@@ -1,6 +1,7 @@
 package team.hypox.chat.spigot.bukkit;
 
 import org.bukkit.Bukkit;
+import team.hypox.chat.core.commons.Condition;
 import team.hypox.chat.core.extend.AudienceArgumentProcessor;
 
 import java.util.HashMap;
@@ -22,6 +23,11 @@ public class AudienceArgumentProcessorImpl implements AudienceArgumentProcessor 
 
 	@Override
 	public void addProcessor(String type, Function<Object, Object> processor) {
+		Condition.expects(
+				processors.get(type) == null,
+				"Processor with the type %s is already registered", type
+		);
+
 		processors.put(type, processor);
 	}
 }

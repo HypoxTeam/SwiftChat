@@ -22,6 +22,6 @@ public interface AudienceNamespace {
 
 	<T> AudienceProvider using(String namespace, T argument);
 
-	void use(String namespace, Function<Object, AudienceProvider> factory);
+	AudienceNamespace use(String namespace, Function<Object, AudienceProvider> factory);
 
 }
