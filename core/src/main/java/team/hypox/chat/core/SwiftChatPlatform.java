@@ -10,7 +10,7 @@ public abstract class SwiftChatPlatform {
 	private boolean enabled = false;
 
 	public void enable() {
-		Condition.expects(!enabled, "You cant enable SwiftChat while its enabled!");
+		Condition.expects(!enabled, "SwiftChat is already enabled");
 
 		try {
 			setup();
