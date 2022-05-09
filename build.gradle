@@ -12,6 +12,8 @@ allprojects {
     shadowJar {
         archiveBaseName.set("${rootProjectName}")
         archiveClassifier.set("-${projectVersion}")
+
+        relocate("org.jetbrains", "${libPkg}.jetbrains")
     }
 
     repositories {
@@ -19,8 +21,10 @@ allprojects {
     }
 
     dependencies {
+        implementation("org.jetbrains:annotations:16.0.2")
+
         testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
-        testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
 
         compileOnly("org.projectlombok:lombok:1.18.22")
         annotationProcessor("org.projectlombok:lombok:1.18.22")

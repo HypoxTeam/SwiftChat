@@ -15,6 +15,10 @@ public class MentionChannelFormatter extends DecoratorChannelFormatter {
 	private final static Pattern MENTION_REGEX = Pattern.compile("@.([a-zA-Z0-9_\\-.]+)");
 	private final MentionSettings mentionService;
 
+	public static ChannelFormatter withoutDecorators(MentionSettings settings) {
+		return new MentionChannelFormatter(new EndDecorator(), settings);
+	}
+
 	public MentionChannelFormatter(ChannelFormatter formatter, MentionSettings mentionService) {
 		super(formatter);
 		this.mentionService = mentionService;

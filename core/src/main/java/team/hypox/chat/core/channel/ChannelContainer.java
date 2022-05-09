@@ -1,6 +1,5 @@
 package team.hypox.chat.core.channel;
 
-import com.sun.istack.internal.Nullable;
 import team.hypox.chat.core.structure.channel.Channel;
 
 public interface ChannelContainer {
@@ -9,7 +8,7 @@ public interface ChannelContainer {
 
 	void register(String channelName, Channel channel);
 
-	@Nullable Channel search(String channelName);
+	Channel search(String channelName);
 
 	Channel searchOrDefault(String channelName);
 

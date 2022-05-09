@@ -12,6 +12,10 @@ public class PersonalCensureChannelFormatter extends DecoratorChannelFormatter {
 	private final CensureSettings censureSettings;
 	private final MemberSettings memberSettings;
 
+	public static ChannelFormatter withoutDecorators(CensureSettings censureSettings, MemberSettings memberSettings) {
+		return new PersonalCensureChannelFormatter(new EndDecorator(), censureSettings, memberSettings);
+	}
+
 	public PersonalCensureChannelFormatter(ChannelFormatter formatter, CensureSettings censureSettings, MemberSettings memberSettings) {
 		super(formatter);
 		this.censureSettings = censureSettings;

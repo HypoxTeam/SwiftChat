@@ -7,18 +7,18 @@ import team.hypox.chat.core.structure.channel.decorator.DecoratorChannelConditio
 import team.hypox.chat.core.structure.member.ChannelMember;
 import team.hypox.chat.core.structure.message.MessageContext;
 import team.hypox.chat.core.util.ChannelMemberList;
-import team.hypox.chat.spigot.bukkit.AudienceProvider;
+import team.hypox.chat.spigot.bukkit.AudienceFactory;
 import team.hypox.chat.spigot.condition.WorldChannelCondition;
 
 public class WorldChannel extends AbstractChannel {
 
-	private final AudienceProvider audienceProvider;
+	private final AudienceFactory audienceFactory;
 	private final World world;
 
 	private final ChannelCondition condition;
 
-	public WorldChannel(AudienceProvider audienceProvider, World world) {
-		this.audienceProvider = audienceProvider;
+	public WorldChannel(AudienceFactory audienceFactory, World world) {
+		this.audienceFactory = audienceFactory;
 		this.world = world;
 		this.condition = new WorldChannelCondition(world, new DecoratorChannelCondition.EndDecorator());
 	}
@@ -30,6 +30,6 @@ public class WorldChannel extends AbstractChannel {
 
 	@Override
 	protected ChannelMemberList audience() {
-		return audienceProvider.audience(world);
+		return audienceFactory.world(world).invoke();
 	}
 }

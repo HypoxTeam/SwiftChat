@@ -5,6 +5,11 @@ import team.hypox.chat.core.structure.channel.decorator.DecoratorChannelFormatte
 import team.hypox.chat.core.structure.message.MessageContext;
 
 public class DotChannelFormatter extends DecoratorChannelFormatter {
+
+	public static ChannelFormatter withoutDecorates() {
+		return new DotChannelFormatter(new EndDecorator());
+	}
+
 	public DotChannelFormatter(ChannelFormatter formatter) {
 		super(formatter);
 	}

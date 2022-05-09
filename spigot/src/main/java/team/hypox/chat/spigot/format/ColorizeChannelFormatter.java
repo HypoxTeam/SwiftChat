@@ -8,6 +8,10 @@ import team.hypox.chat.core.structure.message.MessageContext;
 
 public class ColorizeChannelFormatter extends DecoratorChannelFormatter {
 
+	public static ChannelFormatter withoutDecorates() {
+		return new ColorizeChannelFormatter(new EndDecorator());
+	}
+
 	public ColorizeChannelFormatter(ChannelFormatter formatter) {
 		super(formatter);
 	}

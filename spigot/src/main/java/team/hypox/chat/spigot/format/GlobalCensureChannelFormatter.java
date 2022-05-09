@@ -9,6 +9,10 @@ public class GlobalCensureChannelFormatter extends DecoratorChannelFormatter {
 
 	private final CensureSettings censureSettings;
 
+	public static ChannelFormatter withoutDecorates(CensureSettings settings) {
+		return new GlobalCensureChannelFormatter(new EndDecorator(), settings);
+	}
+
 	public GlobalCensureChannelFormatter(ChannelFormatter formatter, CensureSettings censureSettings) {
 		super(formatter);
 		this.censureSettings = censureSettings;
