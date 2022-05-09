@@ -1,10 +1,17 @@
 package team.hypox.chat.core.structure.channel;
 
+import team.hypox.chat.core.channel.ChannelData;
 import team.hypox.chat.core.structure.member.ChannelMember;
 import team.hypox.chat.core.structure.message.MessageContext;
 import team.hypox.chat.core.util.ChannelMemberList;
 
 public abstract class AbstractChannel implements Channel, ChannelCondition, ChannelFormatter {
+
+	private final ChannelData data;
+
+	protected AbstractChannel(ChannelData data) {
+		this.data = data;
+	}
 
 	@Override
 	public void notifyMessage(MessageContext ctx) {
@@ -42,4 +49,8 @@ public abstract class AbstractChannel implements Channel, ChannelCondition, Chan
 		return true;
 	}
 
+	@Override
+	public ChannelData data() {
+		return data;
+	}
 }

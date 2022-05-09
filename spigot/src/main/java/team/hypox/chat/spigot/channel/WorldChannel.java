@@ -1,6 +1,7 @@
 package team.hypox.chat.spigot.channel;
 
 import org.bukkit.World;
+import team.hypox.chat.core.channel.ChannelData;
 import team.hypox.chat.core.structure.channel.AbstractChannel;
 import team.hypox.chat.core.structure.channel.ChannelCondition;
 import team.hypox.chat.core.structure.channel.decorator.DecoratorChannelCondition;
@@ -17,7 +18,8 @@ public class WorldChannel extends AbstractChannel {
 
 	private final ChannelCondition condition;
 
-	public WorldChannel(AudienceFactory audienceFactory, World world) {
+	public WorldChannel(ChannelData data, AudienceFactory audienceFactory, World world) {
+		super(data);
 		this.audienceFactory = audienceFactory;
 		this.world = world;
 		this.condition = new WorldChannelCondition(world, new DecoratorChannelCondition.EndDecorator());
