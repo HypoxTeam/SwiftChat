@@ -10,6 +10,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.reflect.TypeToken;
+import team.hypox.chat.core.SwiftChatPlatform;
 import team.hypox.chat.core.channel.ChannelData;
 import team.hypox.chat.core.channel.ChannelFactory;
 import team.hypox.chat.core.structure.channel.Channel;
@@ -23,9 +24,13 @@ import java.util.stream.Collectors;
 
 public class JsonMapperProvider {
 
-	public final static Gson GSON = new GsonBuilder()
-			.registerTypeAdapter(JsonMapperProvider.class, (JsonSerializer<JsonMapperProvider>) (src, typeOfSrc, context) -> null)
-			.create();
+	public static Gson GSON;
+
+	public static synchronized void configureGSON(SwiftChatPlatform platform) {
+		GSON = new GsonBuilder()
+				.registerTypeAdapter(Channel.class, new ChannelSerializer(platform.channelFactory()))
+				.create();
+	}
 
 	public static class ChannelSerializer implements JsonSerializer<Channel>, JsonDeserializer<Channel> {
 

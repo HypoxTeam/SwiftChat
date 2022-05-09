@@ -7,6 +7,7 @@ import team.hypox.chat.core.configuration.ConfigurationFactory;
 import team.hypox.chat.core.extend.AudienceArgumentProcessor;
 import team.hypox.chat.core.extend.AudienceNamespace;
 import team.hypox.chat.core.extend.DecoratorNamespace;
+import team.hypox.chat.core.structure.member.cache.MemberCache;
 
 public abstract class SwiftChatPlatform {
 
@@ -25,12 +26,17 @@ public abstract class SwiftChatPlatform {
 
 	protected abstract void setup();
 
+	protected MemberCache memberCache;
 	protected ChannelContainer channelContainer;
 	protected ConfigurationFactory configurationFactory;
 	protected DecoratorNamespace decoratorNamespace;
 	protected AudienceArgumentProcessor argumentProcessor;
 	protected AudienceNamespace audienceNamespace;
 	protected ChannelFactory channelFactory;
+
+	public MemberCache memberCache() {
+		return memberCache;
+	}
 
 	public ChannelFactory channelFactory() {
 		return channelFactory;

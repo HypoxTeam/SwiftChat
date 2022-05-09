@@ -4,9 +4,7 @@ import team.hypox.chat.core.structure.member.ChannelMember;
 
 import java.util.UUID;
 
-public interface MemberCache<Player> {
-
-	ChannelMember find(Player player);
+public interface MemberCache {
 
 	ChannelMember find(UUID id);
 

@@ -17,12 +17,12 @@ import java.util.stream.Collectors;
 
 public class AudienceFactory implements AudienceNamespace {
 
-	private final MemberCache<Player> memberCache;
+	private final MemberCache memberCache;
 	private final AudienceArgumentProcessor argumentProcessor;
 
 	private final Map<String, Function<Object, AudienceProvider>> namespaces = new HashMap<>();
 
-	public AudienceFactory(MemberCache<Player> memberCache, AudienceArgumentProcessor argumentProcessor) {
+	public AudienceFactory(MemberCache memberCache, AudienceArgumentProcessor argumentProcessor) {
 		this.memberCache = memberCache;
 		this.argumentProcessor = argumentProcessor;
 
@@ -48,12 +48,14 @@ public class AudienceFactory implements AudienceNamespace {
 
 	public AudienceProvider server() {
 		return () -> Bukkit.getServer().getOnlinePlayers().stream()
+				.map(Player::getUniqueId)
 				.map(memberCache::find)
 				.collect(Collectors.toCollection(ChannelMemberList::empty));
 	}
 
 	public AudienceProvider world(World world) {
 		return () -> world.getPlayers().stream()
+				.map(Player::getUniqueId)
 				.map(memberCache::find)
 				.collect(Collectors.toCollection(ChannelMemberList::empty));
 	}

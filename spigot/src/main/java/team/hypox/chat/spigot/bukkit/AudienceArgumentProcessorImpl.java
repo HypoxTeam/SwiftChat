@@ -1,6 +1,5 @@
 package team.hypox.chat.spigot.bukkit;
 
-import org.bukkit.Bukkit;
 import team.hypox.chat.core.commons.Condition;
 import team.hypox.chat.core.extend.AudienceArgumentProcessor;
 
@@ -13,7 +12,7 @@ public class AudienceArgumentProcessorImpl implements AudienceArgumentProcessor 
 	private final Map<String, Function<Object, Object>> processors = new HashMap<>();
 
 	public AudienceArgumentProcessorImpl() {
-		processors.put("world", o -> Bukkit.getWorld((String) o));
+		processors.put("world", Processors.WORLD);
 	}
 
 	@Override

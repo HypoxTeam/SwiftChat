@@ -1,0 +1,16 @@
+repositories {
+    maven { url("https://oss.sonatype.org/content/repositories/snapshots/") }
+    maven { url("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") }
+}
+
+dependencies {
+    //core
+    implementation(project(":automod"))
+
+    //swiftchat platform
+    implementation(project(":core"))
+    implementation(project(":spigot"))
+
+    //spigot
+    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
+}

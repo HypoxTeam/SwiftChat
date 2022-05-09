@@ -1,3 +1,4 @@
 rootProject.name = 'SwiftChat'
-include("core", "spigot", "worldguard-addon", "vmessenger-impl", "automod")
+include("core", "spigot", "worldguard-addon", "vmessenger-impl", "automod", "automod:spigot")
+
 
