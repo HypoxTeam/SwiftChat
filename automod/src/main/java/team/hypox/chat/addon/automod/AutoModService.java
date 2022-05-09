@@ -55,10 +55,10 @@ public class AutoModService {
 
 	public void addContext(String message) {
 		if (conversationContext.size() >= config.getInt("context-message")) {
-			conversationContext.removeFirst();
+			conversationContext.pollFirst();
 		}
 
-		conversationContext.addLast(message);
+		conversationContext.offerLast(message);
 	}
 
 	private AnalyzeCommentRequest analyze() {
