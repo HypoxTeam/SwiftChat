@@ -5,6 +5,7 @@ import team.hypox.chat.core.structure.channel.ChannelCondition;
 import team.hypox.chat.core.structure.channel.ChannelFormatter;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class HashDecoratorNamespace implements DecoratorNamespace {
@@ -32,5 +33,15 @@ public class HashDecoratorNamespace implements DecoratorNamespace {
 	public DecoratorNamespace use(Class<? extends ChannelFormatter> clazz, ChannelFormatter formatter) {
 		formatterNamespace.put(clazz, formatter);
 		return this;
+	}
+
+	@Override
+	public Iterator<Class<? extends ChannelCondition>> namespaceCondition() {
+		return conditionNamespace.keySet().iterator();
+	}
+
+	@Override
+	public Iterator<Class<? extends ChannelFormatter>> namespaceFormatter() {
+		return formatterNamespace.keySet().iterator();
 	}
 }
