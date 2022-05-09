@@ -5,6 +5,8 @@ import team.hypox.chat.core.configuration.Configuration;
 import team.hypox.chat.core.configuration.ConfigurationFactory;
 import team.hypox.chat.spigot.bukkit.BukkitConfiguration;
 
+import java.io.File;
+
 public class YamlConfigurationFactory implements ConfigurationFactory {
 
 	private final Plugin plugin;
@@ -18,4 +20,8 @@ public class YamlConfigurationFactory implements ConfigurationFactory {
 		return new BukkitConfiguration(plugin, name);
 	}
 
+	@Override
+	public File createFile(String name) {
+		return new File(plugin.getDataFolder(), name);
+	}
 }
