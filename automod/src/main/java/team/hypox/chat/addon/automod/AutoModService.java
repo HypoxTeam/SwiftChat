@@ -54,7 +54,7 @@ public class AutoModService {
 	}
 
 	public void addContext(String message) {
-		if (conversationContext.size() >= config.getInt("context-message")) {
+		if (conversationContext.size() >= config.getInt("context-message-limit")) {
 			conversationContext.pollFirst();
 		}
 

@@ -7,6 +7,9 @@ dependencies {
     //core
     implementation(project(":core"))
 
+    //automod
+    implementation(project(":automod"))
+
     //spigot
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
 }

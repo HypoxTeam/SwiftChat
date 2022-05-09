@@ -1,0 +1,19 @@
+api-key: SECRET-API-TOKEN
+api-timeout: 360
+
+#
+#      Available Languages
+# Arabic (ar), Chinese (zh), Czech (cs), Dutch (nl), English (en),
+# French (fr), German (de), Hindi (hi), Hinglish (hi-Latn),
+# Indonesian (id), Italian (it), Japanese (ja), Korean (ko),
+# Polish (pl), Portuguese (pt), Russian (ru), Spanish (es)
+#
+languages:
+  - "es"
+  - "en"
+
+# Last messages to provide for the AI in the chat
+context-message-limit: 5
+
+# Max % toxicity for hide messages
+max-toxicity: 60
