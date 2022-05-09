@@ -1,7 +1,7 @@
 # SwiftChat Spigot
 SwiftChat-Spigot is a SwiftChat Platform implementation for Minecraft Servers. It grants the next level experience in chat design
 
-## Extends SwiftChat
+## Extend SwiftChat
 The common SwiftChat modules not enough for you?
 
 ### Extending with external plugin
@@ -41,3 +41,11 @@ public class AddonExample implements Listener {
 
 }
 ```
+
+### Extending with the main core
+You can contribute adding Channel Modules with pull requests!. All of the swiftchat users will be 
+have access to your new modules
+
+Start contributing [here](https://github.com/HypoxTeam/SwiftChat/pulls)
+
+PS: if you want to contribute please follow the [code guide](https://github.com/HypoxTeam/SwiftChat/code-guide.md)!
