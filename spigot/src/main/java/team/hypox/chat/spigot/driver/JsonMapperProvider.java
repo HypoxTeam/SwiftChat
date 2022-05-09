@@ -44,6 +44,8 @@ public class JsonMapperProvider {
 			ChannelData data = src.data();
 
 			object.addProperty("name", data.getName());
+			object.addProperty("audience", data.getAudienceType());
+			object.addProperty("audienceArgument", data.getAudienceArgument());
 
 			if (data.isTemplated()) {
 				object.addProperty("template", data.getTemplate());
@@ -64,16 +66,17 @@ public class JsonMapperProvider {
 			ChannelData data = ChannelData.with()
 					.name(object.get("name").getAsString())
 					.audienceType(object.get("audience").getAsString())
+					.audienceArgument(object.get("audienceArgument").getAsString())
 					.template(object.get("template").getAsString())
-					.conditionals(clazz(ChannelCondition.class, object.get("conditionals").getAsString()))
-					.formatters(clazz(ChannelFormatter.class, object.get("formatters").getAsString()))
+					.conditionals(marshall(ChannelCondition.class, object.get("conditionals").getAsString()))
+					.formatters(marshall(ChannelFormatter.class, object.get("formatters").getAsString()))
 					.build();
 
 			return channelFactory.from(data);
 		}
 
 		@SuppressWarnings("unchecked")
-		private <T> List<Class<? extends T>> clazz(Class<T> entity, String json) {
+		private static <T> List<Class<? extends T>> marshall(Class<T> entity, String json) {
 			List<String> query = BLANK_GSON.fromJson(json, LIST);
 			List<Class<? extends T>> classes = new ArrayList<>();
 

@@ -49,11 +49,13 @@ public class AddonExample implements Listener {
 
 		//Register the channel
 		platform.channelContainer()
+				//Register new channel
+				.register(awesomeChannel)
+				//Register channel overriding name
 				.register("my-awesome-vip-club", awesomeChannel);
 	}
 
 }
-
 ```
 
 ### Extending with the main core

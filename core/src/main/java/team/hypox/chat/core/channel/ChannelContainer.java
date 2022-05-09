@@ -7,7 +7,11 @@ public interface ChannelContainer {
 
 	ChannelContainer loadFromDriver(ChannelDriver driver);
 
-	void register(String channelName, Channel channel);
+	default ChannelContainer register(Channel channel) {
+		return register(channel.data().getName(), channel);
+	}
+
+	ChannelContainer register(String channelName, Channel channel);
 
 	Channel search(String channelName);
 

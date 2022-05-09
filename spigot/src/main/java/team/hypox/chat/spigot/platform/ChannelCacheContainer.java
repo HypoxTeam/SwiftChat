@@ -12,8 +12,9 @@ public class ChannelCacheContainer implements ChannelContainer {
 	}
 
 	@Override
-	public void register(String channelName, Channel channel) {
+	public ChannelContainer register(String channelName, Channel channel) {
 
+		return this;
 	}
 
 	@Override
