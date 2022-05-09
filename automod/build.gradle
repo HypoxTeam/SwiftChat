@@ -1,0 +1,8 @@
+repositories {
+	maven { url("https://jitpack.io") }
+}
+
+dependencies {
+	implementation(project(":core"))
+	implementation("com.github.ghawk1ns:perspective-api-wrapper:4a4e2a03b5")
+}
