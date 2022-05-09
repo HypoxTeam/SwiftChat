@@ -23,6 +23,7 @@ public class AddonExample implements Listener {
 
 		//Using platform decorator namespace to register ChannelConditions or Formatters
 		platform.decoratorNamespace()
+				.use(ColorizeChannelFormatter.class, ColorizeChannelFormatter.withoutDecorates())
 				.use(ToxicityCondition.class, ToxicityCondition.withoutDecorator(modService));
 
 		platform.audienceNamespace()
