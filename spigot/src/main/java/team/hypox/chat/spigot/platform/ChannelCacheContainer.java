@@ -1,11 +1,13 @@
 package team.hypox.chat.spigot.platform;
 
 import team.hypox.chat.core.channel.ChannelContainer;
+import team.hypox.chat.core.driver.ChannelDriver;
 import team.hypox.chat.core.structure.channel.Channel;
 
 public class ChannelCacheContainer implements ChannelContainer {
+
 	@Override
-	public ChannelContainer loadFromDriver() {
+	public ChannelContainer loadFromDriver(ChannelDriver driver) {
 		return null;
 	}
 
