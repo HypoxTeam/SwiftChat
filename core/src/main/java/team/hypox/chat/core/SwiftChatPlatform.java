@@ -13,6 +13,11 @@ public abstract class SwiftChatPlatform {
 
 	private boolean enabled = false;
 
+	/**
+	 * Enable SwiftChat.
+	 * SwiftChatPlatformAccessor will be granted access if is not already linked with other Platform
+	 * this method throws an IllegalArgumentException if the Platform is already enabled!
+	 */
 	public void enable() {
 		Condition.expects(!enabled, "SwiftChat is already enabled");
 

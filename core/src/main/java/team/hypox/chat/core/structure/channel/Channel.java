@@ -5,6 +5,10 @@ import team.hypox.chat.core.structure.message.MessageContext;
 
 public interface Channel {
 
+	/**
+	 * Channel Data Configuration
+	 * @return the actual data configuration
+	 */
 	ChannelData data();
 
 	/**
