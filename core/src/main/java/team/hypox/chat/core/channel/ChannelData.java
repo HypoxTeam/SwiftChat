@@ -15,6 +15,7 @@ public class ChannelData {
 	private final String template;
 	private final String audienceType;
 	private final String audienceArgument;
+	private final String audienceProcessor;
 	private final List<Class<? extends ChannelCondition>> conditionals;
 	private final List<Class<? extends ChannelFormatter>> formatters;
 
