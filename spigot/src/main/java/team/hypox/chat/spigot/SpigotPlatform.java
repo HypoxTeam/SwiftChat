@@ -30,7 +30,7 @@ public class SpigotPlatform extends SwiftChatPlatform {
 		this.decoratorNamespace = new HashDecoratorNamespace();
 		this.configurationFactory = new YamlConfigurationFactory(plugin);
 		this.argumentProcessor = new AudienceArgumentProcessorImpl();
-		this.audienceNamespace = new AudienceFactory(memberCache, argumentProcessor);
+		this.audienceNamespace = new AudienceFactory(argumentProcessor);
 		this.channelFactory = new ChannelFactory(decoratorNamespace, audienceNamespace);
 
 		JsonMapperProvider.configureGSON(this);

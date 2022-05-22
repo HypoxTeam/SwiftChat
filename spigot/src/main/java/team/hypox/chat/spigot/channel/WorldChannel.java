@@ -32,6 +32,6 @@ public class WorldChannel extends AbstractChannel {
 
 	@Override
 	protected ChannelMemberList audience() {
-		return audienceFactory.world(world).invoke();
+		return audienceFactory.using("world", world).invoke();
 	}
 }
