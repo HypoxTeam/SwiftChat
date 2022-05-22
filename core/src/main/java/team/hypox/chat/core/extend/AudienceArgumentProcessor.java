@@ -12,7 +12,7 @@ public interface AudienceArgumentProcessor {
 	 * @return the argument processed
 	 */
 	default Object processArgument(ChannelData data) {
-		return processArgument(data.getAudienceType(), data.getAudienceArgument());
+		return processArgument(data.getAudienceProcessor(), data.getAudienceArgument());
 	}
 
 	/**
@@ -29,6 +29,6 @@ public interface AudienceArgumentProcessor {
 	 * @param type the type of argument processor
 	 * @param processor the argument processor
 	 */
-	void addProcessor(String type, Function<Object, Object> processor);
+	AudienceArgumentProcessor addProcessor(String type, Function<Object, Object> processor);
 
 }
