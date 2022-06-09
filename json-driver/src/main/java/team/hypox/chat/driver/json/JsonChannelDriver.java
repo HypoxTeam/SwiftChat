@@ -20,7 +20,7 @@ import java.util.concurrent.CompletableFuture;
 public class JsonChannelDriver implements ChannelDriver {
 
 	private static final String JSON_EXTENSION = ".json";
-	private final Gson serializer = JsonMapperProvider.GSON;
+	private final Gson SERIALIZER = JsonMapperProvider.GSON;
 
 	private final File folder;
 
