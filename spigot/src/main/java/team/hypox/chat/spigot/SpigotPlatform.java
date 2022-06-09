@@ -4,9 +4,11 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import team.hypox.chat.core.SwiftChatPlatform;
 import team.hypox.chat.core.channel.ChannelFactory;
+import team.hypox.chat.driver.json.JsonMapperProvider;
 import team.hypox.chat.spigot.bukkit.AudienceArgumentProcessorImpl;
 import team.hypox.chat.spigot.bukkit.AudienceFactory;
-import team.hypox.chat.spigot.driver.JsonMapperProvider;
+import team.hypox.chat.spigot.bukkit.DefaultAudiences;
+import team.hypox.chat.spigot.group.GroupService;
 import team.hypox.chat.spigot.member.PlayerMemberCache;
 import team.hypox.chat.spigot.platform.ChannelCacheContainer;
 import team.hypox.chat.spigot.platform.HashDecoratorNamespace;
@@ -32,6 +34,8 @@ public class SpigotPlatform extends SwiftChatPlatform {
 		this.argumentProcessor = new AudienceArgumentProcessorImpl();
 		this.audienceNamespace = new AudienceFactory(argumentProcessor);
 		this.channelFactory = new ChannelFactory(decoratorNamespace, audienceNamespace);
+
+		new DefaultAudiences(audienceNamespace, memberCache, new GroupService());
 
 		JsonMapperProvider.configureGSON(this);
 	}

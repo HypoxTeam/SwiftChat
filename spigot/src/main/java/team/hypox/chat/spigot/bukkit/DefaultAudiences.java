@@ -22,8 +22,8 @@ public class DefaultAudiences {
 		this.groupService = groupService;
 
 		namespace
-				.use("world", world -> world((World) world))
 				.use("server_global", unused -> server())
+				.use("world", world -> world((World) world))
 				.use("groupId", groupUUID -> group((UUID) groupUUID))
 				.argumentProcessor()
 				.addProcessor("world", Processors.WORLD)
