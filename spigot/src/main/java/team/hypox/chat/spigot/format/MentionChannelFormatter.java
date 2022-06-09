@@ -39,7 +39,7 @@ public class MentionChannelFormatter extends DecoratorChannelFormatter {
 			String userMentioned = matcher.group().substring(1);
 
 			if (userMentioned.equalsIgnoreCase(recipient.name())) {
-				mentionService.execute();
+				mentionService.execute(recipient);
 
 				matcher.appendReplacement(
 						buffer,

@@ -1,0 +1,8 @@
+replace: "@!#?$%/"
+blacklist:
+  - "dick"
+  - "pussy"
+  - "dumb"
+  - "asshole"
+  - "bitch"
+  - "fuck"

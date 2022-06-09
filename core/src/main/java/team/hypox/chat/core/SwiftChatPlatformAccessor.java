@@ -12,8 +12,8 @@ public class SwiftChatPlatformAccessor {
 	 * @return SwiftChatPlatform implementation
 	 */
 	public static synchronized SwiftChatPlatform access() {
-		Condition.expects(
-				platform != null,
+		Condition.notNull(
+				platform,
 				"SwiftChat platform implementation is not accessible yet"
 		);
 

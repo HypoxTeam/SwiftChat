@@ -18,8 +18,8 @@ public class AudienceArgumentProcessorImpl implements AudienceArgumentProcessor 
 
 	@Override
 	public AudienceArgumentProcessor addProcessor(String type, Function<Object, Object> processor) {
-		Condition.expects(
-				processors.get(type) == null,
+		Condition.needNull(
+				processors.get(type),
 				"Processor with the type %s is already registered", type
 		);
 
