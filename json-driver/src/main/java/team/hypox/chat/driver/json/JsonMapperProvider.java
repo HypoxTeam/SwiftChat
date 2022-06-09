@@ -1,4 +1,4 @@
-package team.hypox.chat.spigot.driver;
+package team.hypox.chat.driver.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

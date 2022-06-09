@@ -7,6 +7,9 @@ dependencies {
     //core
     implementation(project(":core"))
 
+    //json-driver
+    implementation(project(":json-driver"))
+
     //spigot
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
 }

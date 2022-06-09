@@ -1,4 +1,4 @@
-package team.hypox.chat.spigot.driver;
+package team.hypox.chat.driver.json;
 
 import com.google.gson.Gson;
 import team.hypox.chat.core.configuration.ConfigurationFactory;
@@ -20,7 +20,7 @@ import java.util.concurrent.CompletableFuture;
 public class JsonChannelDriver implements ChannelDriver {
 
 	private static final String JSON_EXTENSION = ".json";
-	private static final Gson SERIALIZER = JsonMapperProvider.GSON;
+	private final Gson serializer = JsonMapperProvider.GSON;
 
 	private final File folder;
 
@@ -36,14 +36,14 @@ public class JsonChannelDriver implements ChannelDriver {
 	@Override
 	public CompletableFuture<Void> save(Channel channel) {
 		return CompletableFuture.runAsync(() ->
-			serialize(channel)
+				serialize(channel)
 		);
 	}
 
 	@Override
 	public CompletableFuture<Channel> find(String channelName) {
 		return CompletableFuture.supplyAsync(() ->
-			serialize(getFile(channelName))
+				serialize(getFile(channelName))
 		);
 	}
 
@@ -103,3 +103,4 @@ public class JsonChannelDriver implements ChannelDriver {
 		return Arrays.asList(files);
 	}
 }
+
