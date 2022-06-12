@@ -10,6 +10,10 @@ public class TestGlobalChannel extends AbstractChannel {
 
 	private final ChannelFormatter formatter = new MentionChannelFormatter(new RecipientChannelFormatter(new EndFormat()));
 
+	public TestGlobalChannel() {
+		super(name);
+	}
+
 	@Override
 	public MessageContext formatMessage(MessageContext ctx) {
 		ctx.formatMessage(ctx.author().name() + " -> " + ctx.message());

@@ -1,5 +1,6 @@
 package team.hypox.chat.core.structure.channel;
 
+import team.hypox.chat.core.channel.ChannelData;
 import team.hypox.chat.core.structure.member.ChannelMember;
 import team.hypox.chat.core.structure.message.MessageContext;
 
@@ -13,7 +14,7 @@ public interface ChannelFormatter {
 	 * @param recipient Recipient to format context
 	 * @return new message context formatted
 	 */
-	MessageContext formatMessage(MessageContext ctx, ChannelMember recipient);
+	MessageContext formatMessage(MessageContext ctx, ChannelMember recipient, ChannelData channelData);
 
 	/**
 	 * Format message globally, all recipients will be format the message, if you want to customize per recipient
@@ -21,6 +22,6 @@ public interface ChannelFormatter {
 	 * @param ctx Message context
 	 * @return new message context formatted
 	 */
-	MessageContext formatMessage(MessageContext ctx);
+	MessageContext formatMessage(MessageContext ctx, ChannelData channelData);
 
 }

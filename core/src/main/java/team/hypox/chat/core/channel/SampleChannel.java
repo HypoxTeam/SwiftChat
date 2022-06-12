@@ -29,9 +29,9 @@ public class SampleChannel extends AbstractChannel {
 	}
 
 	@Override
-	public boolean canListen(ChannelMember recipient, MessageContext ctx) {
+	public boolean canListen(ChannelMember recipient, MessageContext ctx, ChannelData channelData) {
 		for (ChannelCondition channelCondition : condition) {
-			if (!channelCondition.canListen(recipient, ctx)) {
+			if (!channelCondition.canListen(recipient, ctx, channelData)) {
 				return false;
 			}
 		}
@@ -40,18 +40,18 @@ public class SampleChannel extends AbstractChannel {
 	}
 
 	@Override
-	public MessageContext formatMessage(MessageContext ctx) {
+	public MessageContext formatMessage(MessageContext ctx, ChannelData channelData) {
 		for (ChannelFormatter channelFormatter : formatter) {
-			ctx = channelFormatter.formatMessage(ctx);
+			ctx = channelFormatter.formatMessage(ctx, channelData);
 		}
 
 		return ctx;
 	}
 
 	@Override
-	public MessageContext formatMessage(MessageContext ctx, ChannelMember recipient) {
+	public MessageContext formatMessage(MessageContext ctx, ChannelMember recipient, ChannelData channelData) {
 		for (ChannelFormatter channelFormatter : formatter) {
-			ctx = channelFormatter.formatMessage(ctx, recipient);
+			ctx = channelFormatter.formatMessage(ctx, recipient, channelData);
 		}
 
 		return ctx;

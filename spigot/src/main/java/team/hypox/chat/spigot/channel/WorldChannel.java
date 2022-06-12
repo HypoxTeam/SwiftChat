@@ -22,12 +22,12 @@ public class WorldChannel extends AbstractChannel {
 		super(data);
 		this.audienceFactory = audienceFactory;
 		this.world = world;
-		this.condition = new WorldChannelCondition(world, new DecoratorChannelCondition.EndDecorator());
+		this.condition = new WorldChannelCondition(new DecoratorChannelCondition.EndDecorator());
 	}
 
 	@Override
-	public boolean canListen(ChannelMember member, MessageContext ctx) {
-		return condition.canListen(member, ctx);
+	public boolean canListen(ChannelMember member, MessageContext ctx, ChannelData channelData) {
+		return condition.canListen(member, ctx, channelData);
 	}
 
 	@Override

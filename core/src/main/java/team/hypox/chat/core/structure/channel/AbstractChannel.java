@@ -16,11 +16,11 @@ public abstract class AbstractChannel implements Channel, ChannelCondition, Chan
 	@Override
 	public void notifyMessage(MessageContext ctx) {
 		ChannelMemberList audience = audience();
-		MessageContext formattedContext = formatMessage(ctx);
+		MessageContext formattedContext = formatMessage(ctx, data);
 
 		for (ChannelMember member : audience) {
-			if (canListen(member, formattedContext)) {
-				member.sendMessage(formatMessage(formattedContext.clone(), member));
+			if (canListen(member, formattedContext, data)) {
+				member.sendMessage(formatMessage(formattedContext.clone(), member, data));
 			}
 		}
 	}
@@ -35,17 +35,17 @@ public abstract class AbstractChannel implements Channel, ChannelCondition, Chan
 		Implemented by default, override this methods if is necessary in child classes
 	 */
 	@Override
-	public MessageContext formatMessage(MessageContext ctx, ChannelMember recipient) {
+	public MessageContext formatMessage(MessageContext ctx, ChannelMember recipient, ChannelData channelData) {
 		return ctx;
 	}
 
 	@Override
-	public MessageContext formatMessage(MessageContext ctx) {
+	public MessageContext formatMessage(MessageContext ctx, ChannelData channelData) {
 		return ctx;
 	}
 
 	@Override
-	public boolean canListen(ChannelMember recipient, MessageContext ctx) {
+	public boolean canListen(ChannelMember recipient, MessageContext ctx, ChannelData channelData) {
 		return true;
 	}
 

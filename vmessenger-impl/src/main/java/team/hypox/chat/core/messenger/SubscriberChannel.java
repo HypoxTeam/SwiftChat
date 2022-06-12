@@ -8,6 +8,10 @@ public abstract class SubscriberChannel
 		extends AbstractChannel
 		implements Interceptor<MessageContext>
 {
+	public SubscriberChannel() {
+		super(name);
+	}
+
 	@Override
 	public void subscribe(MessageContext object) {
 		notifyMessage(object);

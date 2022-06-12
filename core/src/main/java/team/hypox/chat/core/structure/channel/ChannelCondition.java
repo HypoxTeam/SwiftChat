@@ -1,5 +1,6 @@
 package team.hypox.chat.core.structure.channel;
 
+import team.hypox.chat.core.channel.ChannelData;
 import team.hypox.chat.core.structure.member.ChannelMember;
 import team.hypox.chat.core.structure.message.MessageContext;
 
@@ -13,6 +14,6 @@ public interface ChannelCondition {
 	 * @param ctx Message context
 	 * @return true if can listen otherwise false
 	 */
-	boolean canListen(ChannelMember recipient, MessageContext ctx);
+	boolean canListen(ChannelMember recipient, MessageContext ctx, ChannelData channel);
 
 }

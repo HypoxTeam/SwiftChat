@@ -9,6 +9,7 @@ public abstract class PublisherChannel extends AbstractChannel {
 	private final Messenger messenger;
 
 	protected PublisherChannel(Messenger messenger) {
+		super(name);
 		this.messenger = messenger;
 	}
 

@@ -1,6 +1,7 @@
 package team.hypox.chat.addon.automod.toxicity;
 
 import team.hypox.chat.addon.automod.AutoModService;
+import team.hypox.chat.core.channel.ChannelData;
 import team.hypox.chat.core.structure.channel.ChannelCondition;
 import team.hypox.chat.core.structure.channel.decorator.DecoratorChannelCondition;
 import team.hypox.chat.core.structure.member.ChannelMember;
@@ -20,9 +21,9 @@ public class ToxicityCondition extends DecoratorChannelCondition {
 	}
 
 	@Override
-	public boolean canListen(ChannelMember recipient, MessageContext ctx) {
+	public boolean canListen(ChannelMember recipient, MessageContext ctx, ChannelData channelData) {
 		modService.addContext(ctx.message());
 
-		return !modService.isToxic(ctx.message()) && super.canListen(recipient, ctx);
+		return !modService.isToxic(ctx.message()) && super.canListen(recipient, ctx, channelData;
 	}
 }
