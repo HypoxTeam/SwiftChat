@@ -24,6 +24,6 @@ public class ToxicityCondition extends DecoratorChannelCondition {
 	public boolean canListen(ChannelMember recipient, MessageContext ctx, ChannelData channelData) {
 		modService.addContext(ctx.message());
 
-		return !modService.isToxic(ctx.message()) && super.canListen(recipient, ctx, channelData;
+		return !modService.isToxic(ctx.message()) && super.canListen(recipient, ctx, channelData);
 	}
 }
